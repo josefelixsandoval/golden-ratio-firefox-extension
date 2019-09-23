@@ -1,0 +1,57 @@
+{
+  "extensionName": {
+    "message": "Golde Ratio",
+    "description": "Display golden ratio areas of a page."
+  },
+
+  "extensionDescription": {
+    "message": "Demonstrates the menus API.",
+    "description": "Description of the add-on."
+  },
+
+  "menuItemSelectionLogger": {
+    "message": "Log '%s' to the browser console",
+    "description": "Title of context menu item that logs the selected text when clicked."
+  },
+
+  "menuItemLeftRatio": {
+    "message": "Left Ratio",
+    "description": "Left div is bigger."
+  },
+
+  "menuItemBluify": {
+    "message": "Right Ratio",
+    "description": "Right div is bigger."
+  },
+
+  "menuItemThreeColumns": {
+    "message": "Three Columns",
+    "description": "Three Columns."
+  },
+
+  "menuItemTurnOff": {
+    "message": "Turn Off",
+    "description": "Turn Off."
+  },
+
+  "menuItemCheckMe": {
+    "message": "Check me",
+    "description": "Title of context menu item when the item is checked."
+  },
+
+  "menuItemUncheckMe": {
+    "message": "Uncheck me",
+    "description": "Title of context menu item when the item is unchecked."
+  },
+
+  "menuItemOpenSidebar": {
+    "message": "Open sidebar",
+    "description": "Title of context menu item that opens a sidebar."
+  },
+
+  "menuItemToolsMenu": {
+    "message": "Click me!",
+    "description": "Title of tools menu item."
+  }
+
+}
