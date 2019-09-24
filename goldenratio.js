@@ -60,6 +60,14 @@ browser.menus.create({
 }, onCreated);
 
 browser.menus.create({
+  id: "fourColumns",
+  type: "radio",
+  title: "Four Columns",
+  contexts: ["all"],
+  checked: false
+}, onCreated);
+
+browser.menus.create({
   id: "imgFibRectL",
   type: "radio",
   title: "Show Fib Rect (L)",
@@ -178,6 +186,26 @@ function handleThreeColumns(tabId) {
   });
 }
 
+function handleFourColumns(tabId) {
+  var four = `
+  if (document.getElementById("divisionID") !== null) {
+    document.getElementById("divisionID").remove();
+  }
+  var div = document.createElement("div");
+  div.setAttribute('id', 'divisionID')
+  var divOne = '<div style="float:left; width:25%; height:100%; opacity:0.1; z-index: 9999; background:red;"></div>';
+  var divTwo = '<div style="float:left; width:25%; height:100%; opacity:0.1; z-index: 9999; background:yellow;"></div>';
+  var divThree = '<div style="float:left; width:25%; height:100%; opacity:0.1; z-index: 9999; background:green;"></div>';
+  var divFour = '<div style="float:left; width:25%; height:100%; opacity:0.1; z-index: 9999; background:blue;"></div>';
+  var divContainer = '<div style="position:absolute;width:100%; height:100%; z-index: 99999">' + divOne + divTwo + divThree + divFour + '</div>';
+  div.innerHTML = divContainer;
+  document.body.insertBefore(div, document.body.firstChild);
+  `
+  browser.tabs.executeScript(tabId, {
+    code: four
+  });
+}
+
 
 function handleShowFibRectL(tabId, side) {
   var img = `
@@ -283,6 +311,9 @@ browser.menus.onClicked.addListener((info, tab) => {
       break;
     case "threeColumns":
       handleThreeColumns(tab.id);
+      break;
+    case "fourColumns":
+      handleFourColumns(tab.id);
       break;
     case "imgFibRectL":
       handleShowFibRectL(tab.id);
