@@ -60,14 +60,28 @@ browser.menus.create({
 }, onCreated);
 
 browser.menus.create({
+  id: "imgFibRectL",
+  type: "radio",
+  title: "Show Fib Rect (L)",
+  contexts: ["all"],
+  checked: false
+}, onCreated);
+
+browser.menus.create({
+  id: "imgFibRectR",
+  type: "radio",
+  title: "Show Fib Rect (R)",
+  contexts: ["all"],
+  checked: false
+}, onCreated);
+
+browser.menus.create({
   id: "turnOff",
   type: "radio",
   title: browser.i18n.getMessage("menuItemTurnOff"),
   contexts: ["all"],
   checked: true
 }, onCreated);
-
-
 
 var checkedState = true;
 
@@ -105,15 +119,14 @@ function handleLeftRatio(tabId) {
 var div = document.createElement('div');
 div.innerHTML = 'jose';
 document.body.insertBefore(div, document.body.firstChild);
-
-
 */
+
 var left = `
 if (document.getElementById("divisionID") !== null) {
   document.getElementById("divisionID").remove();
 }
 var div = document.createElement("div");
-div.setAttribute('id', 'divisionID')
+div.setAttribute('id', 'divisionID');
 var leftDiv = '<div style="float:left; width:61.8%; height:100%; opacity:0.1; z-index: 9999; background:red;"></div>';
 var rightDiv = '<div style="float:left; width:38.2%; height:100%; opacity:0.1; z-index: 9999; background:green;"></div>';
 var divContainer = '<div style="position:absolute;width:100%; height:100%; z-index: 99999">' + leftDiv + rightDiv + '</div>';
@@ -126,7 +139,6 @@ function handleLeftRatio(tabId) {
     code: left
   });
 }
-
 
 var right = `
 if (document.getElementById("divisionID") !== null) {
@@ -166,9 +178,63 @@ function handleThreeColumns(tabId) {
   });
 }
 
+
+function handleShowFibRectL(tabId, side) {
+  var img = `
+  var img = document.createElement("img");
+  img.setAttribute('id', 'imgIDL');
+  img.src = "http://localhost:8000/CP202/Fall2019/W4/Sept24/img/Fibonacci_spiral_34.svg";
+  img.style.opacity = "0.2";
+  img.style.marginLeft = "auto";
+  img.style.width = "100%";
+  img.style.position = "absolute";
+  img.style.top = "0";
+  img.style.left = "0";
+  img.style.zIndex = "10001";
+  document.body.insertBefore(img, document.body.firstChild);
+  `
+
+//  img.style.transform = "rotate(90deg)";
+
+  browser.tabs.executeScript(tabId, {
+    code: img
+  });
+}
+
+function handleShowFibRectR(tabId, side) {
+  var img = `
+  var img = document.createElement("img");
+  img.setAttribute('id', 'imgIDR');
+  img.src = "http://localhost:8000/CP202/Fall2019/W4/Sept24/img/Fibonacci_spiral_34.svg";
+  img.style.opacity = "0.2";
+  img.style.marginLeft = "auto";
+  img.style.width = "100%";
+  img.style.position = "absolute";
+  img.style.top = "0";
+  img.style.left = "0";
+  img.style.transform = "rotate(180deg)";
+  img.style.zIndex = "10001";
+  document.body.insertBefore(img, document.body.firstChild);
+  `
+
+//  img.style.transform = "rotate(90deg)";
+
+  browser.tabs.executeScript(tabId, {
+    code: img
+  });
+}
+
 var off = `
 if (document.getElementById("divisionID") !== null) {
   document.getElementById("divisionID").remove();
+}
+
+if (document.getElementById("imgIDL") !== null) {
+  document.getElementById("imgIDL").remove();
+}
+
+if (document.getElementById("imgIDR") !== null) {
+  document.getElementById("imgIDR").remove();
 }
 `
 function handleTurnOff(tabId) {
@@ -218,7 +284,12 @@ browser.menus.onClicked.addListener((info, tab) => {
     case "threeColumns":
       handleThreeColumns(tab.id);
       break;
-
+    case "imgFibRectL":
+      handleShowFibRectL(tab.id);
+      break;
+    case "imgFibRectR":
+      handleShowFibRectR(tab.id);
+      break;
     case "turnOff":
       handleTurnOff(tab.id);
       break;
