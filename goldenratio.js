@@ -1,3 +1,6 @@
+
+/* Comment */
+
 /*
 Called when the item has been created, or when creation failed due to an error.
 We'll just log success/failure here.
@@ -117,8 +120,8 @@ function borderify(tabId, color) {
 /*
 function handleLeftRatio(tabId) {
     var div = document.createElement("div");
-    var leftDiv = '<div style="float:left; width:61.8%; height:100%; opacity:0.1; z-index: 9999; background:red;"></div>';
-    var rightDiv = '<div style="float:left; width:38.2%; height:100%; opacity:0.1; z-index: 9999; background:green;"></div>';
+    var leftDiv = '<div style="float:left; width:61.8%; height:100%; opacity:0.3; z-index: 9999; background:red;"></div>';
+    var rightDiv = '<div style="float:left; width:38.2%; height:100%; opacity:0.3; z-index: 9999; background:green;"></div>';
     var divContainer = '<div style="position:absolute;width:100%; height:100%; z-index: 99999">' + rightDiv + leftDiv + '</div>';
     div.innerHTML = divContainer;
     document.body.insertBefore(div, document.body.firstChild);
@@ -135,8 +138,8 @@ if (document.getElementById("divisionID") !== null) {
 }
 var div = document.createElement("div");
 div.setAttribute('id', 'divisionID');
-var leftDiv = '<div style="float:left; width:61.8%; height:100%; opacity:0.1; z-index: 9999; background:red;"></div>';
-var rightDiv = '<div style="float:left; width:38.2%; height:100%; opacity:0.1; z-index: 9999; background:green;"></div>';
+var leftDiv = '<div style="float:left; width:61.8%; height:100%; opacity:0.3; z-index: 9999; background:red;"></div>';
+var rightDiv = '<div style="float:left; width:38.2%; height:100%; opacity:0.3; z-index: 9999; background:green;"></div>';
 var divContainer = '<div style="position:absolute;width:100%; height:100%; z-index: 99999">' + leftDiv + rightDiv + '</div>';
 div.innerHTML = divContainer;
 document.body.insertBefore(div, document.body.firstChild);
@@ -154,8 +157,8 @@ if (document.getElementById("divisionID") !== null) {
 }
 var div = document.createElement("div");
 div.setAttribute('id', 'divisionID')
-var leftDiv = '<div style="float:left; width:61.8%; height:100%; opacity:0.1; z-index: 9999; background:red;"></div>';
-var rightDiv = '<div style="float:left; width:38.2%; height:100%; opacity:0.1; z-index: 9999; background:green;"></div>';
+var leftDiv = '<div style="float:left; width:61.8%; height:100%; opacity:0.3; z-index: 9999; background:red;"></div>';
+var rightDiv = '<div style="float:left; width:38.2%; height:100%; opacity:0.3; z-index: 9999; background:green;"></div>';
 var divContainer = '<div style="position:absolute;width:100%; height:100%; z-index: 99999">' + rightDiv + leftDiv + '</div>';
 div.innerHTML = divContainer;
 document.body.insertBefore(div, document.body.firstChild);
@@ -173,9 +176,9 @@ if (document.getElementById("divisionID") !== null) {
 }
 var div = document.createElement("div");
 div.setAttribute('id', 'divisionID')
-var leftDiv = '<div style="float:left; width:33.3%; height:100%; opacity:0.1; z-index: 9999; background:red;"></div>';
-var centerDiv = '<div style="float:left; width:33.3%; height:100%; opacity:0.1; z-index: 9999; background:yellow;"></div>';
-var rightDiv = '<div style="float:left; width:33.3%; height:100%; opacity:0.1; z-index: 9999; background:green;"></div>';
+var leftDiv = '<div style="float:left; width:33.3%; height:100%; opacity:0.3; z-index: 9999; background:red;"></div>';
+var centerDiv = '<div style="float:left; width:33.3%; height:100%; opacity:0.3; z-index: 9999; background:yellow;"></div>';
+var rightDiv = '<div style="float:left; width:33.3%; height:100%; opacity:0.3; z-index: 9999; background:green;"></div>';
 var divContainer = '<div style="position:absolute;width:100%; height:100%; z-index: 99999">' + leftDiv + centerDiv + rightDiv + '</div>';
 div.innerHTML = divContainer;
 document.body.insertBefore(div, document.body.firstChild);
@@ -193,10 +196,10 @@ function handleFourColumns(tabId) {
   }
   var div = document.createElement("div");
   div.setAttribute('id', 'divisionID')
-  var divOne = '<div style="float:left; width:25%; height:100%; opacity:0.1; z-index: 9999; background:red;"></div>';
-  var divTwo = '<div style="float:left; width:25%; height:100%; opacity:0.1; z-index: 9999; background:yellow;"></div>';
-  var divThree = '<div style="float:left; width:25%; height:100%; opacity:0.1; z-index: 9999; background:green;"></div>';
-  var divFour = '<div style="float:left; width:25%; height:100%; opacity:0.1; z-index: 9999; background:blue;"></div>';
+  var divOne = '<div style="float:left; width:25%; height:100%; opacity:0.3; z-index: 9999; background:red;"></div>';
+  var divTwo = '<div style="float:left; width:25%; height:100%; opacity:0.3; z-index: 9999; background:yellow;"></div>';
+  var divThree = '<div style="float:left; width:25%; height:100%; opacity:0.3; z-index: 9999; background:green;"></div>';
+  var divFour = '<div style="float:left; width:25%; height:100%; opacity:0.3; z-index: 9999; background:blue;"></div>';
   var divContainer = '<div style="position:absolute;width:100%; height:100%; z-index: 99999">' + divOne + divTwo + divThree + divFour + '</div>';
   div.innerHTML = divContainer;
   document.body.insertBefore(div, document.body.firstChild);
@@ -211,8 +214,8 @@ function handleShowFibRectL(tabId, side) {
   var img = `
   var img = document.createElement("img");
   img.setAttribute('id', 'imgIDL');
-  img.src = "http://localhost:8000/CP202/Fall2019/W4/Sept24/img/Fibonacci_spiral_34.svg";
-  img.style.opacity = "0.2";
+  img.src = "https://wlu-cp202.appspot.com/CP202/Fall2019/W4/Sept24/img/Fibonacci_spiral_34.svg";
+  img.style.opacity = "0.5";
   img.style.marginLeft = "auto";
   img.style.width = "100%";
   img.style.position = "absolute";
@@ -233,8 +236,8 @@ function handleShowFibRectR(tabId, side) {
   var img = `
   var img = document.createElement("img");
   img.setAttribute('id', 'imgIDR');
-  img.src = "http://localhost:8000/CP202/Fall2019/W4/Sept24/img/Fibonacci_spiral_34.svg";
-  img.style.opacity = "0.2";
+  img.src = "https://wlu-cp202.appspot.com/CP202/Fall2019/W4/Sept24/img/Fibonacci_spiral_34.svg";
+  img.style.opacity = "0.5";
   img.style.marginLeft = "auto";
   img.style.width = "100%";
   img.style.position = "absolute";
